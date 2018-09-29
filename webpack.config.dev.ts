@@ -1,9 +1,14 @@
+import * as webpack from 'webpack';
 import * as path from 'path';
 
-export default {
+const webpackOptions = {
     target: 'web',
     mode: 'development',
-    entry: path.resolve(__dirname, 'src/index.tsx'),
+    entry: [
+        'react-hot-loader/patch',
+        'webpack-hot-middleware/client?reload=true',
+        path.resolve(__dirname, 'src/index.tsx')
+    ],
     output: {
         path: path.resolve(__dirname, 'dist'), // Note: Physical files are only output by the production build task `npm run build`.
         publicPath: '/',
@@ -16,7 +21,9 @@ export default {
     // Enable sourcemaps for debugging webpack's output.
     devtool: 'source-map', 
     //devtool: 'cheap-module-eval-source-map', // more info:https://webpack.js.org/guides/development/#using-source-maps and https://webpack.js.org/configuration/devtool/
-
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
     module: {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
@@ -36,3 +43,5 @@ export default {
     //     'react-dom': 'ReactDOM'
     // }
 };
+
+export default webpackOptions;
