@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "start": "concurrently -k -r -s first \"npm run test:watch\" \"npm run open:src\" \"npm run lint:watch\"",
+    "start": "open:src",
     "open:src": "ts-node tools/srcServer.ts",
     "lint": "--esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
@@ -14,8 +14,13 @@
   "author": "Graham Rogers",
   "license": "ISC",
   "dependencies": {
+    "connected-react-router": "^4.5.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@types/browser-sync": "^0.0.42",
@@ -26,12 +31,16 @@
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.8",
     "@types/react-hot-loader": "^4.1.0",
+    "@types/react-redux": "^6.0.9",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/redux-immutable-state-invariant": "^2.0.4",
     "@types/webpack": "^4.4.13",
     "@types/webpack-dev-middleware": "^2.0.2",
     "@types/webpack-hot-middleware": "^2.16.4",
     "autoprefixer": "^9.1.5",
     "awesome-typescript-loader": "^5.2.1",
     "browser-sync": "^2.24.7",
+    "concurrently": "^4.0.1",
     "connect-history-api-fallback": "^1.5.0",
     "css-loader": "^1.0.0",
     "enzyme": "^3.6.0",
@@ -42,6 +51,7 @@
     "postcss-loader": "^3.0.0",
     "prettier": "^1.14.3",
     "react-hot-loader": "^4.3.11",
+    "redux-immutable-state-invariant": "^2.1.0",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.0",
