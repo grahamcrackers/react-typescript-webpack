@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "start": "open:src",
+    "start": "npm run open:src",
     "open:src": "ts-node tools/srcServer.ts",
     "lint": "--esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
@@ -15,9 +15,11 @@
   "license": "ISC",
   "dependencies": {
     "connected-react-router": "^4.5.0",
+    "cuid": "^2.1.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
@@ -52,6 +54,7 @@
     "postcss-loader": "^3.0.0",
     "prettier": "^1.14.3",
     "react-hot-loader": "^4.3.11",
+    "react-router-redux": "^4.0.8",
     "redux-immutable-state-invariant": "^2.1.0",
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
