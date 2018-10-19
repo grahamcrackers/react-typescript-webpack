@@ -6,6 +6,7 @@ import AboutPage from './AboutPage';
 import FuelSavingsPage from './containers/FuelSavingsPage';
 import HomePage from './HomePage';
 import NotFoundPage from './NotFoundPage';
+import TypeSafeActionsPage from './TypeSafeActionsPage';
 
 interface AppProps {
     children?: React.ReactChildren
@@ -40,6 +41,7 @@ class App extends React.Component<AppProps> {
                     <Route exact path="/" component={HomePage} />
                     <Route path="/fuel-savings" component={FuelSavingsPage} />
                     <Route path="/about" component={AboutPage} />
+                    <Route path="/type-safe-actions" component={TypeSafeActionsPage} />
                     <Route component={NotFoundPage} />
                 </Switch>
             </div>

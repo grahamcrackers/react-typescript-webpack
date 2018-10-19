@@ -9,8 +9,9 @@ interface RootProps {
 }
 
 export default class Root extends React.Component<RootProps> {
-    render() {
+    public render() {
         const { store, history } = this.props;
+
         return (
             <Provider store={store}>
                 <ConnectedRouter history={history}>
