@@ -11,19 +11,19 @@ interface FuelSavingsPageProps {
 }
 
 export class FuelSavingsPage extends React.Component<FuelSavingsPageProps> {
-    saveFuelSavings = () => {
+    public saveFuelSavings = () => {
         this.props.actions.saveFuelSavings(this.props.fuelSavings);
-    };
+    }
 
-    calculateFuelSavings = e => {
+    public calculateFuelSavings = e => {
         this.props.actions.calculateFuelSavings(
             this.props.fuelSavings,
             e.target.name,
             e.target.value
         );
-    };
+    }
 
-    render() {
+    public render() {
         return (
             <FuelSavingsForm
                 onSaveClick={this.saveFuelSavings}

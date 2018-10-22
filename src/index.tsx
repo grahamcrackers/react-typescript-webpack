@@ -4,9 +4,19 @@ import { AppContainer } from 'react-hot-loader';
 import Root from './components/Root';
 import configureStore, { history } from './store/configureStore';
 import './styles/styles.scss';
-// require('./favicon.ico'); // Tell webpack to load favicon.ico
+import { loadState, saveState } from './utils/localStorage';
 
-const store = configureStore();
+const persistedState = loadState();
+const store = configureStore(persistedState);
+
+// log
+console.log(store.getState());
+
+store.subscribe(() => {
+    saveState({
+        todos: store.getState().todos
+    });
+});
 
 ReactDOM.render(
     <AppContainer>

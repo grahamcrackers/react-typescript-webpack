@@ -6,18 +6,19 @@ import AboutPage from './AboutPage';
 import FuelSavingsPage from './containers/FuelSavingsPage';
 import HomePage from './HomePage';
 import NotFoundPage from './NotFoundPage';
-import TypeSafeActionsPage from './TypeSafeActionsPage';
+import TypeSafeActionsPage from './containers/TypeSafeActionsPage';
 
 interface AppProps {
-    children?: React.ReactChildren
+    children?: React.ReactChildren;
 }
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
 // component at the top-level.
 
 class App extends React.Component<AppProps> {
-    render() {
+    public render() {
         const activeStyle = { color: 'blue' };
+
         return (
             <div>
                 <div>
