@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
     setVisibilityFilter,
     addTodo
-} from '../../actions/typesafeExampleActions';
+} from '../../actions/todoActions';
 import { ITodo } from '../../models/interfaces/ITodo';
 
 interface FuelSavingsPageProps {
@@ -45,7 +45,7 @@ export class TypeSafeActionsPage extends React.Component<
                 </button>
                 <ul>
                     {todos.map(todo => {
-                        return <li key={todo.id}>{JSON.stringify(todo)}</li>;
+                        return <li key={todo.id}>{todo.text}</li>;
                     })}
                 </ul>
             </div>
@@ -72,7 +72,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    addTodo: value => {
+    addTodo: (value: string) => {
         dispatch(addTodo(value));
 
         return Promise.resolve();

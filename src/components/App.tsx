@@ -6,7 +6,7 @@ import AboutPage from './AboutPage';
 import FuelSavingsPage from './containers/FuelSavingsPage';
 import HomePage from './HomePage';
 import NotFoundPage from './NotFoundPage';
-import TypeSafeActionsPage from './containers/TypeSafeActionsPage';
+import TypeSafeActionsPage from './containers/TodosPage';
 
 interface AppProps {
     children?: React.ReactChildren;
@@ -34,15 +34,15 @@ class App extends React.Component<AppProps> {
                         About
                     </NavLink>
                     {' | '}
-                    <NavLink to="/type-safe-actions" activeStyle={activeStyle}>
-                        TypeSafe Actions
+                    <NavLink to="/todos" activeStyle={activeStyle}>
+                        Todos
                     </NavLink>
                 </div>
                 <Switch>
                     <Route exact path="/" component={HomePage} />
                     <Route path="/fuel-savings" component={FuelSavingsPage} />
                     <Route path="/about" component={AboutPage} />
-                    <Route path="/type-safe-actions" component={TypeSafeActionsPage} />
+                    <Route path="/todos" component={TypeSafeActionsPage} />
                     <Route component={NotFoundPage} />
                 </Switch>
             </div>

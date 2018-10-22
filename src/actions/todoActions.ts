@@ -20,15 +20,15 @@ export const toggle = createAction('todos/TOGGLE', resolve => {
 // (id: string) => { type: 'todos/TOGGLE'; payload: string; }
 
 export const addTodo = createAction('todos/ADD', resolve => {
-    return (todo: ITodo) => {
+    return (todo: string) => {
 
         // return resolve({ title, id: cuid(), completed: false } as ITodo);
-        return resolve({ title: todo.title, text: todo.text, id: cuid(), completed: false } as ITodo);
+        return resolve({ title: '', text: todo, id: cuid(), completed: false } as ITodo);
     };
 });
 // (title: string) => { type: 'todos/ADD'; payload: Todo; }
 
-export const setVisibilityFilter = createAction('SET_VISIBILITY_FILTER', resolve => {
+export const setVisibilityFilter = createAction('todos/SET_VISIBILITY_FILTER', resolve => {
     return (filter: string) => {
         return resolve(filter);
     };

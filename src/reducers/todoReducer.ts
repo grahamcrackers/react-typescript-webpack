@@ -1,5 +1,5 @@
 import { ActionType, getType } from 'typesafe-actions';
-import * as todos from '../actions/typesafeExampleActions';
+import * as todos from '../actions/todoActions';
 import { ITodo } from '../models/interfaces/ITodo';
 
 export type TodosAction = ActionType<typeof todos>;

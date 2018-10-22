@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import fuelSavings from './fuelSavingsReducer';
-import typesafeExampleReducer from './typesafeExampleReducer';
+import todos from './todoReducer';
 import visibilityFilter from './visibilityFilterReducer';
 
 const rootReducer = combineReducers({
   fuelSavings,
-  todos: typesafeExampleReducer,
+  todos,
   visibilityFilter
 });
 
